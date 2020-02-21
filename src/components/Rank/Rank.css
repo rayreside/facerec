@@ -1,0 +1,16 @@
+.round {
+    height: 5rem;
+    width: 5rem;
+    background-color: #fab6cb;
+    border-radius: 50%;
+    display: flex;
+    justify-self: center;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.round-inner {
+    text-align: center;
+    margin: auto;
+    color: #212121;
+}

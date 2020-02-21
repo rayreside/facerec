@@ -1,0 +1,19 @@
+.logo {
+    margin-bottom: auto;
+    display: flex;
+}
+
+.Tilt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffd866;
+    width: 4rem;
+    height: 4rem;
+    margin-right: 1rem;
+}
+
+.Tilt-inner {
+    margin: auto;
+    font-size: 2em;
+}

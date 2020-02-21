@@ -1,0 +1,18 @@
+.mainNav {
+    display: flex;
+    padding-top: 1em;
+}
+
+.right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: auto;
+    height: 4rem;
+}
+
+header {
+    z-index: 1000;
+    height: 6rem;
+}
