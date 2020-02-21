@@ -3,7 +3,7 @@ import './Register.css';
 
 const Register= ({ onRouteChange }) => {
     return(
-        <div className='regForm mainContent center w-30-l w-100-m'>
+        <div className='regForm w-30-l w-90'>
             <article className="flannel br3 w-100">
                 <h1 className="f3 black br3 br--top-ns mv0 pv3">Register</h1>
                 <main className="pa4 w-100 black-80">

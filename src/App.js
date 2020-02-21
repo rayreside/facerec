@@ -7,6 +7,7 @@ import Navigation from './components/Navigation/Navigation.js';
 import Rank from './components/Rank/Rank.js';
 import Image from './components/Image/Image.js';
 import FaceRec from './components/FaceRec/FaceRec.js';
+// import Footer from './components/Footer/Footer.js';
 import Particles from 'react-particles-js';
 
 const app = new Clarifai.App({
@@ -126,20 +127,23 @@ class App extends Component {
     return (
       <div className="App" id="particles-js">
         <Particles className='particles' params={particlesOptions}/>
+        {/* <img id='lower-left' className='h4' src='https://thumbs.gfycat.com/MistySeriousAmbushbug-max-1mb.gif' /> */}
         <Navigation isSignedIn={isSignedIn} route={route} onRouteChange={this.onRouteChange} />
-        { route ==='home' ?
-          <div className='mainContent'>
-            <Rank />
-            <Image onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit}/>
-            <FaceRec recBox={recBox} imageUrl={imageUrl} />
-          </div>
-          : (
-            route === 'SignIn' || route === 'SignOut' ?
-            <SignIn onRouteChange = {this.onRouteChange}/>
-            :
-            <Register onRouteChange = {this.onRouteChange}/>
-          )
-        }
+        <div className='flex justify-center pv6 w-100'>
+          { route ==='home' ?
+            <div className='flex flex-column justify-center w-100'>
+              <Rank />
+              <Image onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit}/>
+              <FaceRec recBox={recBox} imageUrl={imageUrl} />
+            </div>
+            : (
+              route === 'SignIn' || route === 'SignOut' ?
+              <SignIn onRouteChange = {this.onRouteChange}/>
+              :
+              <Register onRouteChange = {this.onRouteChange}/>
+            )
+          }
+        </div>
       </div>
     );
   }

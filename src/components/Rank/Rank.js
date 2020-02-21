@@ -3,7 +3,7 @@ import './Rank.css';
 
 const Rank = () => {
     return(
-        <div className='flex flex-column justify-center'>
+        <div>
             <div className='f3'>
                 <p className='yBG ma0 ph3'>{'Ray, your current rank is: '}</p>
             </div>

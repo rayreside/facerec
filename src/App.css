@@ -66,10 +66,6 @@
   z-index: -1;
 }
 
-.mainContent{
-  padding-top: 6.5rem;
-}
-
 .flannel {
   background-color: hsl(34, 53%, 82%);
   background-image: repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, hsla(197, 62%, 11%, 0.5) 10px,
@@ -86,4 +82,19 @@
   hsla(35, 91%, 65%, 0) 80px, hsla(35, 91%, 65%, 0) 90px, hsla(5, 53%, 63%, 0.5) 90px, hsla(5, 53%, 63%, 0.5) 110px,
   hsla(5, 53%, 63%, 0) 110px, hsla(5, 53%, 63%, 0) 140px, hsla(197, 62%, 11%, 0.5) 140px, hsla(197, 62%, 11%, 0.5) 160px
   );
+}
+
+#lower-right {
+	bottom: 0;
+	right: 0;
+  position: fixed;
+  z-index: -2;
+}
+
+#lower-left {
+	bottom: 0;
+	left: 0;
+  position: fixed;
+  z-index: -2;
+  width: auto;
 }

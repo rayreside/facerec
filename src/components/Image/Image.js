@@ -3,8 +3,8 @@ import './Image.css';
 
 const Image = ({ onInputChange, onButtonSubmit }) => {
     return(
-        <div className='flex flex-column justify-center'>
-            <div className='flex justify-center'>
+        <div>
+            <div>
                 <p className='yBG f3 ph3'>
                     {'Paste Image URL:'}
                     {/* [画像の URL を貼り付け] */}
