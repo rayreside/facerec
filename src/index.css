@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap');
 
+html, body, #root {
+  margin: 0;
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: 'Kosugi Maru', sans-serif;
@@ -21,6 +26,7 @@ code {
 
 .yBG {
   /* color: #f1ede9; */
+  display: inline-block;
   color: #212121;
   background-color: #ffd866;
 }
@@ -47,7 +53,6 @@ code {
 
 .mainContent{
   padding-top: 6.5rem;
-  display: block flex;
 }
 
 .flannel {

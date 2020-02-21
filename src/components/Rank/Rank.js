@@ -3,9 +3,9 @@ import './Rank.css';
 
 const Rank = () => {
     return(
-        <div>
-            <div className='f3 center'>
-                <p className='yBG mv0 ph3'>{'Ray, your current rank is: '}</p>
+        <div className='flex flex-column justify-center'>
+            <div className='f3'>
+                <p className='yBG ma0 ph3'>{'Ray, your current rank is: '}</p>
             </div>
             <div className='round white f1 mv2'>
                 <div className='round-inner'>

@@ -128,7 +128,7 @@ class App extends Component {
         <Particles className='particles' params={particlesOptions}/>
         <Navigation isSignedIn={isSignedIn} route={route} onRouteChange={this.onRouteChange} />
         { route ==='home' ?
-          <div className='mainContent'>
+          <div className='mainContent h-100'>
             <Rank />
             <Image onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit}/>
             <FaceRec recBox={recBox} imageUrl={imageUrl} />
