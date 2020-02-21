@@ -3,11 +3,8 @@ import './Logo.css';
 
 const Logo = () => {
     return (
-        <div className='logo ma4 mt0'>
-            <div className='Tilt br3 pointer'>
-                <div className="Tilt-inner"><span role='img' aria-label='banana-emoji'>🍌</span></div>
-            </div>
-            <p className='f3 b yBG ph2'>test</p>
+        <div className='pointer pa3 flex items-center'>
+            <img src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/banana_1f34c.png'  class="dib w3 h3 pa2" />
         </div>
     )
 }

@@ -1,19 +1,14 @@
-.logo {
-    margin-bottom: auto;
-    display: flex;
-}
-
-.Tilt {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.logo-inner {
     background-color: #ffd866;
-    width: 4rem;
-    height: 4rem;
-    margin-right: 1rem;
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
 }
 
-.Tilt-inner {
-    margin: auto;
-    font-size: 2em;
+.logo-inner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+     bottom: 0;
+    right: 0;
 }

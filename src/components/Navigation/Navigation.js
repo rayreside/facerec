@@ -4,24 +4,24 @@ import Logo from './Logo/Logo.js';
 
 const Navigation = ({ onRouteChange, route, isSignedIn }) => {
     return (
-        <header className="fixed w-100">
-            <nav className="mainNav tracked">
+        <header className="fixed w-100 ph3">
+            <nav className="flex justify-between h-100 tracked">
                 <Logo />
                 { isSignedIn ?
-                <div className='buffer right mr4'>
+                <div className='flex-grow pa3 flex items-center'>
                     <p onClick={() =>onRouteChange('SignOut')} 
-                    className="btnImg h-100 f4 pa3 ba bw1 bg-animate pointer br3">Sign Out</p>
+                    className="btnImg f4 pa3 bg-animate pointer br3">Sign Out</p>
                 </div>
                 :
                 ( route === 'SignIn' || route === 'SignOut' ?
-                <div className='buffer right mr4'>
+                <div className='flex-grow pa3 flex items-center'>
                     <p onClick={() =>onRouteChange('Register')} 
-                    className="btnImg h-100 f4 pa3 ba bw1 bg-animate pointer br3">Register</p>
+                    className="btnImg f4 pa3 bg-animate pointer br3">Register</p>
                 </div>
                 :
-                <div className='buffer right mr4'>
+                <div className='flex-grow pa3 flex items-center'>
                     <p onClick={() =>onRouteChange('SignIn')} 
-                    className="btnImg h-100 f4 pa3 ba bw1 bg-animate pointer br3">Sign In</p>
+                    className="btnImg f4 pa3 bg-animate pointer br3">Sign In</p>
                 </div>
                 )}
             </nav>
