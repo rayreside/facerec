@@ -9,6 +9,9 @@ import Image from './components/Image/Image.js';
 import FaceRec from './components/FaceRec/FaceRec.js';
 // import Footer from './components/Footer/Footer.js';
 import Particles from 'react-particles-js';
+import { ThemeProvider } from 'styled-components';
+import { lightTheme, darkTheme } from './dark-mode/theme.js';
+import { GlobalStyles } from './dark-mode/global.js';
 
 const app = new Clarifai.App({
   apiKey: '4536246d27b942f4bc39353b2773a750'
@@ -79,7 +82,8 @@ class App extends Component {
       imageUrl: '',
       recBox: {},
       route: 'SignIn',
-      isSignedIn: false
+      isSignedIn: false,
+      theme: 'Light'
     }
   }
   
@@ -93,6 +97,17 @@ class App extends Component {
       topRow: claFace.top_row * width,
       rightCol: width - (claFace.right_col * width),
       bottomRow: height - (claFace.bottom_row * height)
+    }
+  }
+
+  // The function that toggles between themes
+  toggleTheme = () => {
+    // if the theme is not light, then set it to dark
+    if (this.state.theme === 'Light') {
+      this.setState({theme: 'Night'});
+    // otherwise, it should be light
+    } else {
+      this.setState({theme: 'Light'});
     }
   }
 
@@ -123,28 +138,31 @@ class App extends Component {
   }
 
   render() {
-    const {isSignedIn, imageUrl, route, recBox} = this.state;
+    const {isSignedIn, imageUrl, route, recBox, theme} = this.state;
     return (
-      <div className="App" id="particles-js">
-        <Particles className='particles' params={particlesOptions}/>
-        {/* <img id='lower-left' className='h4' src='https://thumbs.gfycat.com/MistySeriousAmbushbug-max-1mb.gif' /> */}
-        <Navigation isSignedIn={isSignedIn} route={route} onRouteChange={this.onRouteChange} />
-        <div className='flex justify-center pv6 w-100'>
-          { route ==='home' ?
-            <div className='flex flex-column justify-center w-100'>
-              <Rank />
-              <Image onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit}/>
-              <FaceRec recBox={recBox} imageUrl={imageUrl} />
-            </div>
-            : (
-              route === 'SignIn' || route === 'SignOut' ?
-              <SignIn onRouteChange = {this.onRouteChange}/>
-              :
-              <Register onRouteChange = {this.onRouteChange}/>
-            )
-          }
+      <ThemeProvider theme={theme === 'Light' ? lightTheme : darkTheme}>
+        <GlobalStyles />
+        <div className="App" id="particles-js">
+          <Particles className='particles' params={particlesOptions}/>
+          {/* <img id='lower-left' className='h4' src='https://thumbs.gfycat.com/MistySeriousAmbushbug-max-1mb.gif' /> */}
+          <Navigation toggleTheme={this.toggleTheme} theme={theme} isSignedIn={isSignedIn} route={route} onRouteChange={this.onRouteChange} />
+          <div className='flex justify-center pv6 w-100'>
+            { route ==='home' ?
+              <div className='flex flex-column justify-center w-100'>
+                <Rank />
+                <Image onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit}/>
+                <FaceRec recBox={recBox} imageUrl={imageUrl} />
+              </div>
+              : (
+                route === 'SignIn' || route === 'SignOut' ?
+                <SignIn onRouteChange = {this.onRouteChange}/>
+                :
+                <Register onRouteChange = {this.onRouteChange}/>
+              )
+            }
+          </div>
         </div>
-      </div>
+      </ThemeProvider>
     );
   }
 }

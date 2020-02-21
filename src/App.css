@@ -47,14 +47,8 @@
 }
 
 .btnImg {
-  background-color: #212121;
-  color: #f1ede9;
-}
-
-.btnImg:hover {
-  background-color: #ffd866;
+  background-color: #fab6cb;
   color: #212121;
-  border-color: #f1ede9;
 }
 
 .particles {
