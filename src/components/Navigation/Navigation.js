@@ -13,7 +13,7 @@ const Navigation = ({ onRouteChange, route, isSignedIn, toggleTheme, theme }) =>
                             className="dim b f5 pa2 bg-animate pointer br3">Sign Out</p>
                     }
                     <button onClick={toggleTheme} id='btnToggle'  
-                    className="b ba pa3 mh2 pointer br-100"
+                    className="b bn pa3 mh2 pointer br-100"
                     style={{outline: 0}}></button>
                 </div>
             </nav>
