@@ -5,7 +5,7 @@ const Register= ({ onRouteChange }) => {
     return(
         <div className='regForm w-40-l w-90 br3'>
             <article className="br3 w-100">
-                <h1 className="f4 black br3 br--top-ns mv0 pv3">Register</h1>
+                <h1 className="f4 black br3 br--top mv0 pv3">Register</h1>
                 <div className="flannel flex flex-column items-center regForm-inner br3 br--bottom ph4 pv3 w-100">
                     <fieldset id="register" className="b--transparent">
                         <input className="pa2 mb2 br2 b input-reset bn w-100" type="text" name="name" placeholder='Name' id="name" />
