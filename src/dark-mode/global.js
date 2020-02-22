@@ -15,5 +15,6 @@ export const GlobalStyles = createGlobalStyle`
   
   #btnToggle {
     background: ${({ theme }) => theme.btn};
+    transition: all 0.25s linear;
   }
   `
