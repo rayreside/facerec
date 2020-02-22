@@ -1,3 +1,7 @@
+.imgContainer {
+    height: fit-content;
+}
+
 img {
     width: 40rem;
     height: auto;

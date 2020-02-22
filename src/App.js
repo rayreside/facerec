@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import Clarifai from 'clarifai';
 import './App.css';
-import SignIn from './components/SignIn/SignIn.js';
-import Register from './components/Register/Register.js';
-import Navigation from './components/Navigation/Navigation.js';
-import Rank from './components/Rank/Rank.js';
-import Image from './components/Image/Image.js';
-import FaceRec from './components/FaceRec/FaceRec.js';
-// import Footer from './components/Footer/Footer.js';
+import SignIn from './components/SignIn/SignIn';
+import Register from './components/Register/Register';
+import Navigation from './components/Navigation/Navigation';
+import ImageRank from './components/ImageRank/ImageRank';
+import ImageURL from './components/ImageURL/ImageURL';
+import ImageContainer from './components/ImageContainer/ImageContainer';
+import Footer from './components/Footer/Footer';
 import Particles from 'react-particles-js';
 import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme } from './dark-mode/theme.js';
-import { GlobalStyles } from './dark-mode/global.js';
+import { lightTheme, darkTheme } from './dark-mode/theme';
+import { GlobalStyles } from './dark-mode/global';
 
 const app = new Clarifai.App({
   apiKey: '4536246d27b942f4bc39353b2773a750'
@@ -142,25 +142,30 @@ class App extends Component {
     return (
       <ThemeProvider theme={theme === 'Light' ? lightTheme : darkTheme}>
         <GlobalStyles />
-        <div className="App" id="particles-js">
-          <Particles className='particles' params={particlesOptions}/>
-          {/* <img id='lower-left' className='h4' src='https://thumbs.gfycat.com/MistySeriousAmbushbug-max-1mb.gif' /> */}
-          <Navigation toggleTheme={this.toggleTheme} theme={theme} isSignedIn={isSignedIn} route={route} onRouteChange={this.onRouteChange} />
-          <div className='flex justify-center pv6 w-100'>
-            { route ==='home' ?
-              <div className='flex flex-column justify-center w-100'>
-                <Rank />
-                <Image onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit}/>
-                <FaceRec recBox={recBox} imageUrl={imageUrl} />
-              </div>
-              : (
-                route === 'SignIn' || route === 'SignOut' ?
+        <Particles className='particles' params={particlesOptions}/>
+        {/* <img id='lower-left' className='h4' src='https://thumbs.gfycat.com/MistySeriousAmbushbug-max-1mb.gif' /> */}
+        <Navigation toggleTheme={this.toggleTheme} theme={theme} isSignedIn={isSignedIn} route={route} onRouteChange={this.onRouteChange} />
+        <div className='pt6 w-100'>
+          { route ==='home' ?
+            <div className='flex flex-column items-center w-100'>
+              <ImageRank />
+              <ImageURL onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit}/>
+              <ImageContainer recBox={recBox} imageUrl={imageUrl} />
+              <Footer/>
+            </div>
+            : (
+              route === 'SignIn' || route === 'SignOut' ? 
+              <div className='flex flex-column items-center w-100'>
                 <SignIn onRouteChange = {this.onRouteChange}/>
-                :
+                <Footer/>
+              </div>
+              :
+              <div className='flex flex-column items-center w-100'>
                 <Register onRouteChange = {this.onRouteChange}/>
-              )
-            }
-          </div>
+                <Footer/>
+              </div>
+            )
+          }
         </div>
       </ThemeProvider>
     );

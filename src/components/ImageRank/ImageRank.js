@@ -1,7 +1,7 @@
 import React from 'react';
-import './Rank.css';
+import './ImageRank.css';
 
-const Rank = () => {
+const ImageRank = () => {
     return(
         <div>
             <div className='f3'>
@@ -16,4 +16,4 @@ const Rank = () => {
     )
 }
 
-export default Rank;
+export default ImageRank;
