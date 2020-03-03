@@ -1,19 +1,19 @@
 import React from 'react';
-import './ImageRank.css';
+import './ImageCount.css';
 
-const ImageRank = () => {
+const ImageCount = ({ name, entries }) => {
     return(
         <div>
             <div className='f3'>
-                <p className='yBG ma0 ph3'>{'Ray, your current rank is: '}</p>
+                <p className='yBG ma0 ph3'>{`${name}, your current entry count is: `}</p>
             </div>
             <div className='round white f1 mv2'>
                 <div className='round-inner'>
-                    {'#5'}
+                    {`#${entries}`}
                 </div>
             </div>
         </div>
     )
 }
 
-export default ImageRank;
+export default ImageCount;

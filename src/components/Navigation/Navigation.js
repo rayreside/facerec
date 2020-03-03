@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import './Navigation.css';
 import Logo from './Logo.js';
 
-const Navigation = ({ onRouteChange, route, isSignedIn, toggleTheme, theme }) => {
+const Navigation = ({ onRouteChange, isSignedIn, toggleTheme, theme }) => {
     return (
         <header className="fixed w-100 h3 ph3">
             <nav className="flex justify-between h-100 tracked">
