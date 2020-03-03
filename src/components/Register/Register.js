@@ -41,7 +41,7 @@ class Register extends React.Component {
             })
             .then(response => response.json())
             .then(user => {
-                if (typeof user.id === 'undefined') {
+                if (typeof user.id !== 'undefined') {
                     this.props.logUser(user);
                     this.props.onRouteChange('home');
                 } else console.log('Please fill out the fields properly.');
