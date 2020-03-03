@@ -31,7 +31,7 @@ class Register extends React.Component {
         const { name, email, password, confPassword } = this.state;
         event.preventDefault();
         if (password === confPassword) {
-            fetch('http://localhost:3000/register', {
+            fetch('https://afternoon-springs-61219.herokuapp.com/register', {
                 method: 'post',
                 mode: 'cors',
                 headers: {
